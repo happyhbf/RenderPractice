@@ -5,12 +5,14 @@
 		_MainColor("Main Color", Color) = (0,0,1,0.5)
 	}
 		SubShader{
-		Tags{ "RenderType" = "Opaque" }
+		Tags{ "RenderType" = "Transparent" 
+		"Queue" = "Transparent" }
 		LOD 200
+		Blend SrcAlpha OneMinusSrcAlpha
 		/////////////////////////////////////////测试区
-		Tags{ "Queue" = "Geometry+300" }
+
 		//ZWrite Off
-		//ZTest On
+		ZTest Greater
 		/////////////////////////////////////////测试区
 		CGPROGRAM
 #pragma surface surf Lambert

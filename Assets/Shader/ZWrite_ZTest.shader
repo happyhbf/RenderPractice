@@ -8,9 +8,9 @@
 		Tags{ "RenderType" = "Opaque" }
 		LOD 200
 		/////////////////////////////////////////测试区
-		Tags{ "Queue" = "Geometry+200" }
-		ZWrite Off
-		//ZTest On
+		Tags{ "Queue" = "Geometry" }
+		//ZWrite On
+		//ZTest Off
 		/////////////////////////////////////////测试区
 		CGPROGRAM
 #pragma surface surf Lambert
