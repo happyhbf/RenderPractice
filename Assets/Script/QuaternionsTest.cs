@@ -12,8 +12,8 @@ public class QuaternionsTest : MonoBehaviour
     public Vector4 Q;
     public Quaternion RealQuaternion;
 
-    public Vector4 TestPoint;
-    public Vector4 TargetPoint;
+    public Transform TestTransform;
+    public Transform TargetTransform;
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +39,7 @@ public class QuaternionsTest : MonoBehaviour
         ConjugateQ.z *= -1.0f;
 
         float normalizedQ = Mathf.Sqrt(Q.x * Q.x + Q.y * Q.y + Q.z * Q.z + Q.w * Q.w);
-        TargetPoint = MultiplyQ(MultiplyQ(Q, TestPoint), ConjugateQ);
+        TargetTransform.position = MultiplyQ(MultiplyQ(Q, TestTransform.position), ConjugateQ);
 
     }
 
